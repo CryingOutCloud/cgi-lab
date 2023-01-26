@@ -11,6 +11,10 @@ import json
 import secret
 from http.cookies import SimpleCookie
 
+# Q4: gets the data via these fields
+s = cgi.FieldStorage()
+username = s.getfirst("username")
+password = s.getfirst("password")
 
 form_ok = username == secret.username and password == secret.password
 
@@ -35,10 +39,6 @@ if form_ok:
 
 #Q6 HTTP_COOKIE
 
-# Q4: gets the data via these fields
-s = cgi.FieldStorage()
-username = s.getfirst("username")
-password = s.getfirst("password")
 
 print("Content-Type: text/html")
 print(0)
